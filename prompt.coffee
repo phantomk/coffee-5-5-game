@@ -29,7 +29,7 @@ strToCoordinates = (input) ->
   if halves.length is 2
     x = parseFloat halves[0]
     y = parseFloat halves[1]
-    if !isInteger(x) or !isInteger(y) or !inRange(x) or !inRange(y)
+    if !isInteger(x) or !isInteger(y) or !inRange(x, y)
       console.log 'Each coordinates must be an integer'
     else
       {x, y}
