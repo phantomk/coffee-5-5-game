@@ -16,7 +16,7 @@ tileCounts =
 totalTiles = 0
 totalTiles += count for letter, count of tileCounts
 
-alphabet = (letter for leter of tileCounts).sort()
+alphabet = (letter for letter of tileCounts).sort()
 
 randomLetter = ->
   randomNumber = Math.ceil Math.random() * totalTiles
@@ -43,7 +43,7 @@ tileValues =
 
 moveCount = 0
 score = 0
-useWord = []
+usedWords = []
 
 scoreMove = (grid, swapCoordinates) ->
   {x1, x2, y1, y2} = swapCoordinates
@@ -57,6 +57,9 @@ scoreMove = (grid, swapCoordinates) ->
   usedWords = usedWords.concat newWords
   moveScore *= multiplier
   {moveScore, newWords}
+
+inRange = (x, y) ->
+  0 <= x < GRID_SIZE and 0 <= y < GRID_SIZE
 
 wordsThroughTile = (grid, x, y) ->
   strings = []
